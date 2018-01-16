@@ -1,0 +1,46 @@
+{
+  "name": "eslint-import-resolver-babel-root-slash-import",
+  "version": "1.2.0",
+  "description": "babel-root-slash-import resolver for eslint-plugin-import",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FredericRuaudel/eslint-import-resolver-babel-root-slash-import.git"
+  },
+  "author": {
+    "name": "Frédéric Ruaudel",
+    "email": "fred@h2g.io",
+    "url": "https://www.h2g.io/"
+  },
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "eslint",
+    "eslint-plugin-import",
+    "eslint-import-resolver",
+    "babel",
+    "babel-plugin",
+    "module",
+    "babel-root-slash-import",
+    "rewrite",
+    "resolve",
+    "rename",
+    "mapping",
+    "require",
+    "import"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir build/ --source-maps",
+    "prepublish": "yarn build",
+    "lint": "eslint ./ --ignore-pattern \"node_modules/\"",
+    "prettier": "eslint ./ --fix"
+  },
+  "dependencies": {
+    "eslint-import-resolver-node": "^0.3.2",
+    "fs-extra": "^5.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
