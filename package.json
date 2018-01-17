@@ -1,6 +1,6 @@
 {
   "name": "eslint-import-resolver-babel-root-slash-import",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "description": "babel-root-slash-import resolver for eslint-plugin-import",
   "main": "build/index.js",
   "repository": {
@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "babel src --out-dir build/ --source-maps",
-    "prepublish": "yarn build",
+    "prepare": "yarn build",
     "lint": "eslint ./ --ignore-pattern \"node_modules/\"",
     "prettier": "eslint ./ --fix"
   },
@@ -41,6 +41,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
   }
 }
