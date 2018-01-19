@@ -1,6 +1,6 @@
 {
   "name": "eslint-import-resolver-babel-root-slash-import",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "babel-root-slash-import resolver for eslint-plugin-import",
   "main": "build/index.js",
   "repository": {
