@@ -1,4 +1,4 @@
-# eslint-import-resolver-babel-root-import
+# eslint-import-resolver-babel-root-slash-import [![NPM version](https://badge.fury.io/js/eslint-import-resolver-babel-root-slash-import.svg)](http://badge.fury.io/js/eslint-import-resolver-babel-root-slash-import)
 
 A [babel-root-slash-import](https://github.com/mantrajs/babel-root-slash-import)
 resolver for [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import).
@@ -6,7 +6,7 @@ resolver for [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-i
 ## Installation
 
 ```sh
-npm install --save-dev eslint-plugin-import eslint-import-resolver-babel-root-import
+npm install --save-dev eslint-plugin-import eslint-import-resolver-babel-root-slash-import
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ And see [babel-root-slash-import][babel-root-slash-import] to know how to config
   "rules": {},
   "settings": {
     "import/resolver": {
-      "babel-root-import": {}
+      "babel-root-slash-import": {}
     }
   }
 }
