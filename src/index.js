@@ -21,12 +21,25 @@ function findModuleRootPath(file) {
   return currentPath;
 }
 
-exports.resolve = (source, file, config) => {
+exports.resolve = (source, file, config = {}) => {
+  const { debug } = config
+  const debugFilePath = '/tmp/eslint-import-resolver-babel-root-slash-import.log'
+  if (debug) {
+    fs.appendFileSync(debugFilePath, `${source} - ${file}`)
+  }
   if (source.slice(0, 1) === '/') {
     const moduleRootPath = findModuleRootPath(file);
     const resolvedPath = path.join(moduleRootPath, source);
-    return nodeResolve(resolvedPath, file, config);
+    const result = nodeResolve(resolvedPath, file, config);
+    if (debug) {
+      fs.appendFileSync(debugFilePath, `- absolute - ${result.found} - ${result.path}\n\n`)
+    }
+    return result
   }
 
-  return nodeResolve(source, file, config);
+  const result = nodeResolve(source, file, config);
+  if (debug) {
+    fs.appendFileSync(debugFilePath, `- other - ${result.found} - ${result.path}\n\n`)
+  }
+  return result
 };

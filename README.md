@@ -36,6 +36,35 @@ And see [babel-root-slash-import][babel-root-slash-import] to know how to config
 }
 ```
 
+### Debugging
+
+You can debug the result of the plugin by adding `debug` option to `true` in your `.eslintrc` file:
+
+```json
+{
+  "extends": "airbnb",
+  "rules": {},
+  "settings": {
+    "import/resolver": {
+      "babel-root-slash-import": { "debug": true}
+    }
+  }
+}
+```
+
+Then run your linter and find the result in `/tmp/eslint-import-resolver-babel-root-slash-import.log` :
+
+**Example:**
+```
+/js/store/myFile.js - /path/to/projects/myJSProject/index.js- absolute - true - /path/to/projects/myJSProject/js/store/myFile.js
+
+./js/store/myFile.js - /path/to/projects/myJSProject/index.js- other - true - /path/to/projects/myJSProject/js/store/myFile.js
+
+/js/store/myFile.js - /path/to/projects/index.js- absolute - false - undefined
+```
+
+The format is `{import value} - {file containing the import}- {absolute|other} - {true is resolving succeeds} - {resolved path}`
+
 ## License
 
 MIT, see [LICENSE.md](/LICENSE.md) for details.

@@ -1,8 +1,11 @@
 {
   "name": "eslint-import-resolver-babel-root-slash-import",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "babel-root-slash-import resolver for eslint-plugin-import",
   "main": "build/index.js",
+  "files": [
+    "build/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/FredericRuaudel/eslint-import-resolver-babel-root-slash-import.git"
